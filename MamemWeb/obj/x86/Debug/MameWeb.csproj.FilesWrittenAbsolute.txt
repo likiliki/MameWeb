@@ -10,3 +10,9 @@
 /home/liki/proyectos/monoProject/MameWeb/MamemWeb/bin/Debug/MamemWeb.exe
 /home/liki/proyectos/monoProject/MameWeb/MamemWeb/obj/x86/Debug/MamemWeb.exe
 /home/liki/proyectos/monoProject/MameWeb/MamemWeb/obj/x86/Debug/MamemWeb.exe.mdb
+/home/liki/proyectos/MyGitMameWeb/MameWeb/MamemWeb/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/liki/proyectos/MyGitMameWeb/MameWeb/MamemWeb/obj/x86/Debug/MamemWeb.gtk-gui.gui.stetic
+/home/liki/proyectos/MyGitMameWeb/MameWeb/MamemWeb/bin/Debug/MamemWeb.exe.mdb
+/home/liki/proyectos/MyGitMameWeb/MameWeb/MamemWeb/bin/Debug/MamemWeb.exe
+/home/liki/proyectos/MyGitMameWeb/MameWeb/MamemWeb/obj/x86/Debug/MamemWeb.exe
+/home/liki/proyectos/MyGitMameWeb/MameWeb/MamemWeb/obj/x86/Debug/MamemWeb.exe.mdb

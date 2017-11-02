@@ -83,6 +83,18 @@ public partial class MainWindow
 	
 	private global::Gtk.VPaned vpaned1;
 	
+	private global::Gtk.Frame frameImegenes;
+	
+	private global::Gtk.Alignment GtkAlignment3;
+	
+	private global::Gtk.Label labelImagenes;
+	
+	private global::Gtk.Frame frameYoutube;
+	
+	private global::Gtk.Alignment GtkAlignment4;
+	
+	private global::Gtk.Label labelYoutube;
+	
 	private global::Gtk.Statusbar statusbar1;
 	
 	private global::Gtk.Label label3;
@@ -366,10 +378,46 @@ public partial class MainWindow
 		this.vpaned1.CanFocus = true;
 		this.vpaned1.Name = "vpaned1";
 		this.vpaned1.Position = 223;
+		// Container child vpaned1.Gtk.Paned+PanedChild
+		this.frameImegenes = new global::Gtk.Frame ();
+		this.frameImegenes.Name = "frameImegenes";
+		this.frameImegenes.ShadowType = ((global::Gtk.ShadowType)(0));
+		// Container child frameImegenes.Gtk.Container+ContainerChild
+		this.GtkAlignment3 = new global::Gtk.Alignment (0F, 0F, 1F, 1F);
+		this.GtkAlignment3.Name = "GtkAlignment3";
+		this.GtkAlignment3.LeftPadding = ((uint)(12));
+		this.frameImegenes.Add (this.GtkAlignment3);
+		this.labelImagenes = new global::Gtk.Label ();
+		this.labelImagenes.WidthRequest = 400;
+		this.labelImagenes.HeightRequest = 30;
+		this.labelImagenes.Name = "labelImagenes";
+		this.labelImagenes.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>GtkFrame</b>");
+		this.labelImagenes.UseMarkup = true;
+		this.frameImegenes.LabelWidget = this.labelImagenes;
+		this.vpaned1.Add (this.frameImegenes);
+		global::Gtk.Paned.PanedChild w28 = ((global::Gtk.Paned.PanedChild)(this.vpaned1 [this.frameImegenes]));
+		w28.Resize = false;
+		// Container child vpaned1.Gtk.Paned+PanedChild
+		this.frameYoutube = new global::Gtk.Frame ();
+		this.frameYoutube.Name = "frameYoutube";
+		this.frameYoutube.ShadowType = ((global::Gtk.ShadowType)(0));
+		// Container child frameYoutube.Gtk.Container+ContainerChild
+		this.GtkAlignment4 = new global::Gtk.Alignment (0F, 0F, 1F, 1F);
+		this.GtkAlignment4.Name = "GtkAlignment4";
+		this.GtkAlignment4.LeftPadding = ((uint)(12));
+		this.frameYoutube.Add (this.GtkAlignment4);
+		this.labelYoutube = new global::Gtk.Label ();
+		this.labelYoutube.WidthRequest = 400;
+		this.labelYoutube.HeightRequest = 30;
+		this.labelYoutube.Name = "labelYoutube";
+		this.labelYoutube.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>GtkFrame</b>");
+		this.labelYoutube.UseMarkup = true;
+		this.frameYoutube.LabelWidget = this.labelYoutube;
+		this.vpaned1.Add (this.frameYoutube);
 		this.hpaned1.Add (this.vpaned1);
 		this.vbox1.Add (this.hpaned1);
-		global::Gtk.Box.BoxChild w28 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hpaned1]));
-		w28.Position = 3;
+		global::Gtk.Box.BoxChild w32 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.hpaned1]));
+		w32.Position = 3;
 		// Container child vbox1.Gtk.Box+BoxChild
 		this.statusbar1 = new global::Gtk.Statusbar ();
 		this.statusbar1.Name = "statusbar1";
@@ -379,15 +427,15 @@ public partial class MainWindow
 		this.label3.Name = "label3";
 		this.label3.LabelProp = global::Mono.Unix.Catalog.GetString ("label3");
 		this.statusbar1.Add (this.label3);
-		global::Gtk.Box.BoxChild w29 = ((global::Gtk.Box.BoxChild)(this.statusbar1 [this.label3]));
-		w29.Position = 1;
-		w29.Expand = false;
-		w29.Fill = false;
+		global::Gtk.Box.BoxChild w33 = ((global::Gtk.Box.BoxChild)(this.statusbar1 [this.label3]));
+		w33.Position = 1;
+		w33.Expand = false;
+		w33.Fill = false;
 		this.vbox1.Add (this.statusbar1);
-		global::Gtk.Box.BoxChild w30 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.statusbar1]));
-		w30.Position = 4;
-		w30.Expand = false;
-		w30.Fill = false;
+		global::Gtk.Box.BoxChild w34 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.statusbar1]));
+		w34.Position = 4;
+		w34.Expand = false;
+		w34.Fill = false;
 		this.Add (this.vbox1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
