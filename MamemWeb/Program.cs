@@ -9,7 +9,7 @@ namespace MameWeb
 		{
 			Application.Init ();
 			MainWindow win = new MainWindow ();
-			win.Resize (1000, 600);
+			win.Resize (1280, 720);
 			//win.Maximize ();
 			win.Show ();
 			Application.Run ();

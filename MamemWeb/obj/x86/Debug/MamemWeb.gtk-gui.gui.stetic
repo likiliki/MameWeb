@@ -229,7 +229,7 @@
                         <property name="Yalign">0</property>
                         <property name="LeftPadding">12</property>
                         <child>
-                          <widget class="Gtk.ScrolledWindow" id="scrolledwindow1">
+                          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
                             <property name="MemberName" />
                             <property name="CanFocus">True</property>
                             <property name="ShadowType">In</property>
@@ -368,7 +368,7 @@
                         <property name="Yalign">0</property>
                         <property name="LeftPadding">12</property>
                         <child>
-                          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow">
+                          <widget class="Gtk.ScrolledWindow" id="GtkScrolledWindow1">
                             <property name="MemberName" />
                             <property name="HeightRequest">120</property>
                             <property name="ShadowType">In</property>
@@ -499,7 +499,7 @@
                               </packing>
                             </child>
                             <child>
-                              <widget class="Gtk.ScrolledWindow" id="scrolledwindow2">
+                              <widget class="Gtk.ScrolledWindow" id="scrolledwindow1">
                                 <property name="MemberName" />
                                 <property name="CanFocus">True</property>
                                 <property name="ShadowType">In</property>
@@ -566,6 +566,7 @@
                                     <property name="UseUnderline">True</property>
                                   </widget>
                                   <packing>
+                                    <property name="PackType">End</property>
                                     <property name="Position">0</property>
                                     <property name="AutoSize">True</property>
                                     <property name="Expand">False</property>
@@ -581,6 +582,7 @@
                                     <property name="UseUnderline">True</property>
                                   </widget>
                                   <packing>
+                                    <property name="PackType">End</property>
                                     <property name="Position">1</property>
                                     <property name="AutoSize">True</property>
                                     <property name="Expand">False</property>
@@ -596,6 +598,7 @@
                                     <property name="UseUnderline">True</property>
                                   </widget>
                                   <packing>
+                                    <property name="PackType">End</property>
                                     <property name="Position">2</property>
                                     <property name="AutoSize">True</property>
                                     <property name="Expand">False</property>
@@ -611,6 +614,7 @@
                                     <property name="UseUnderline">True</property>
                                   </widget>
                                   <packing>
+                                    <property name="PackType">End</property>
                                     <property name="Position">3</property>
                                     <property name="AutoSize">True</property>
                                     <property name="Expand">False</property>
@@ -620,13 +624,13 @@
                               </widget>
                               <packing>
                                 <property name="Position">0</property>
-                                <property name="AutoSize">True</property>
+                                <property name="AutoSize">False</property>
                                 <property name="Expand">False</property>
                                 <property name="Fill">False</property>
                               </packing>
                             </child>
                             <child>
-                              <widget class="Gtk.ScrolledWindow" id="scrolledwindow3">
+                              <widget class="Gtk.ScrolledWindow" id="scrolledwindow2">
                                 <property name="MemberName" />
                                 <property name="CanFocus">True</property>
                                 <property name="ShadowType">In</property>
@@ -642,7 +646,7 @@
                               </widget>
                               <packing>
                                 <property name="Position">1</property>
-                                <property name="AutoSize">True</property>
+                                <property name="AutoSize">False</property>
                               </packing>
                             </child>
                           </widget>

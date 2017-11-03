@@ -49,7 +49,7 @@ public partial class MainWindow
 	
 	private global::Gtk.Alignment GtkAlignment;
 	
-	private global::Gtk.ScrolledWindow scrolledwindow1;
+	private global::Gtk.ScrolledWindow GtkScrolledWindow;
 	
 	private global::Gtk.NodeView nodeview1;
 	
@@ -75,7 +75,7 @@ public partial class MainWindow
 	
 	private global::Gtk.Alignment GtkAlignment2;
 	
-	private global::Gtk.ScrolledWindow GtkScrolledWindow;
+	private global::Gtk.ScrolledWindow GtkScrolledWindow1;
 	
 	private global::Gtk.NodeView nodeview2;
 	
@@ -99,7 +99,7 @@ public partial class MainWindow
 	
 	private global::Gtk.Button button11;
 	
-	private global::Gtk.ScrolledWindow scrolledwindow2;
+	private global::Gtk.ScrolledWindow scrolledwindow1;
 	
 	private global::Gtk.Label labelImagenes;
 	
@@ -119,7 +119,7 @@ public partial class MainWindow
 	
 	private global::Gtk.Button button15;
 	
-	private global::Gtk.ScrolledWindow scrolledwindow3;
+	private global::Gtk.ScrolledWindow scrolledwindow2;
 	
 	private global::Gtk.Label labelYoutube;
 	
@@ -279,16 +279,16 @@ public partial class MainWindow
 		this.GtkAlignment.Name = "GtkAlignment";
 		this.GtkAlignment.LeftPadding = ((uint)(12));
 		// Container child GtkAlignment.Gtk.Container+ContainerChild
-		this.scrolledwindow1 = new global::Gtk.ScrolledWindow ();
-		this.scrolledwindow1.CanFocus = true;
-		this.scrolledwindow1.Name = "scrolledwindow1";
-		this.scrolledwindow1.ShadowType = ((global::Gtk.ShadowType)(1));
-		// Container child scrolledwindow1.Gtk.Container+ContainerChild
+		this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
+		this.GtkScrolledWindow.CanFocus = true;
+		this.GtkScrolledWindow.Name = "GtkScrolledWindow";
+		this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
+		// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
 		this.nodeview1 = new global::Gtk.NodeView ();
 		this.nodeview1.CanFocus = true;
 		this.nodeview1.Name = "nodeview1";
-		this.scrolledwindow1.Add (this.nodeview1);
-		this.GtkAlignment.Add (this.scrolledwindow1);
+		this.GtkScrolledWindow.Add (this.nodeview1);
+		this.GtkAlignment.Add (this.GtkScrolledWindow);
 		this.frame1.Add (this.GtkAlignment);
 		this.GtkLabel7 = new global::Gtk.Label ();
 		this.GtkLabel7.WidthRequest = 350;
@@ -378,16 +378,16 @@ public partial class MainWindow
 		this.GtkAlignment2.Name = "GtkAlignment2";
 		this.GtkAlignment2.LeftPadding = ((uint)(12));
 		// Container child GtkAlignment2.Gtk.Container+ContainerChild
-		this.GtkScrolledWindow = new global::Gtk.ScrolledWindow ();
-		this.GtkScrolledWindow.HeightRequest = 120;
-		this.GtkScrolledWindow.Name = "GtkScrolledWindow";
-		this.GtkScrolledWindow.ShadowType = ((global::Gtk.ShadowType)(1));
-		// Container child GtkScrolledWindow.Gtk.Container+ContainerChild
+		this.GtkScrolledWindow1 = new global::Gtk.ScrolledWindow ();
+		this.GtkScrolledWindow1.HeightRequest = 120;
+		this.GtkScrolledWindow1.Name = "GtkScrolledWindow1";
+		this.GtkScrolledWindow1.ShadowType = ((global::Gtk.ShadowType)(1));
+		// Container child GtkScrolledWindow1.Gtk.Container+ContainerChild
 		this.nodeview2 = new global::Gtk.NodeView ();
 		this.nodeview2.CanFocus = true;
 		this.nodeview2.Name = "nodeview2";
-		this.GtkScrolledWindow.Add (this.nodeview2);
-		this.GtkAlignment2.Add (this.GtkScrolledWindow);
+		this.GtkScrolledWindow1.Add (this.nodeview2);
+		this.GtkAlignment2.Add (this.GtkScrolledWindow1);
 		this.frame3.Add (this.GtkAlignment2);
 		this.GtkLabel11 = new global::Gtk.Label ();
 		this.GtkLabel11.WidthRequest = 350;
@@ -474,12 +474,12 @@ public partial class MainWindow
 		w31.Expand = false;
 		w31.Fill = false;
 		// Container child hbox3.Gtk.Box+BoxChild
-		this.scrolledwindow2 = new global::Gtk.ScrolledWindow ();
-		this.scrolledwindow2.CanFocus = true;
-		this.scrolledwindow2.Name = "scrolledwindow2";
-		this.scrolledwindow2.ShadowType = ((global::Gtk.ShadowType)(1));
-		this.hbox3.Add (this.scrolledwindow2);
-		global::Gtk.Box.BoxChild w32 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.scrolledwindow2]));
+		this.scrolledwindow1 = new global::Gtk.ScrolledWindow ();
+		this.scrolledwindow1.CanFocus = true;
+		this.scrolledwindow1.Name = "scrolledwindow1";
+		this.scrolledwindow1.ShadowType = ((global::Gtk.ShadowType)(1));
+		this.hbox3.Add (this.scrolledwindow1);
+		global::Gtk.Box.BoxChild w32 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.scrolledwindow1]));
 		w32.Position = 1;
 		this.GtkAlignment3.Add (this.hbox3);
 		this.frameImegenes.Add (this.GtkAlignment3);
@@ -517,6 +517,7 @@ public partial class MainWindow
 		this.button12.Label = global::Mono.Unix.Catalog.GetString ("GtkButton");
 		this.vbox4.Add (this.button12);
 		global::Gtk.Box.BoxChild w36 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.button12]));
+		w36.PackType = ((global::Gtk.PackType)(1));
 		w36.Position = 0;
 		w36.Expand = false;
 		w36.Fill = false;
@@ -528,6 +529,7 @@ public partial class MainWindow
 		this.button13.Label = global::Mono.Unix.Catalog.GetString ("GtkButton");
 		this.vbox4.Add (this.button13);
 		global::Gtk.Box.BoxChild w37 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.button13]));
+		w37.PackType = ((global::Gtk.PackType)(1));
 		w37.Position = 1;
 		w37.Expand = false;
 		w37.Fill = false;
@@ -539,6 +541,7 @@ public partial class MainWindow
 		this.button14.Label = global::Mono.Unix.Catalog.GetString ("GtkButton");
 		this.vbox4.Add (this.button14);
 		global::Gtk.Box.BoxChild w38 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.button14]));
+		w38.PackType = ((global::Gtk.PackType)(1));
 		w38.Position = 2;
 		w38.Expand = false;
 		w38.Fill = false;
@@ -550,6 +553,7 @@ public partial class MainWindow
 		this.button15.Label = global::Mono.Unix.Catalog.GetString ("GtkButton");
 		this.vbox4.Add (this.button15);
 		global::Gtk.Box.BoxChild w39 = ((global::Gtk.Box.BoxChild)(this.vbox4 [this.button15]));
+		w39.PackType = ((global::Gtk.PackType)(1));
 		w39.Position = 3;
 		w39.Expand = false;
 		w39.Fill = false;
@@ -559,12 +563,12 @@ public partial class MainWindow
 		w40.Expand = false;
 		w40.Fill = false;
 		// Container child hbox4.Gtk.Box+BoxChild
-		this.scrolledwindow3 = new global::Gtk.ScrolledWindow ();
-		this.scrolledwindow3.CanFocus = true;
-		this.scrolledwindow3.Name = "scrolledwindow3";
-		this.scrolledwindow3.ShadowType = ((global::Gtk.ShadowType)(1));
-		this.hbox4.Add (this.scrolledwindow3);
-		global::Gtk.Box.BoxChild w41 = ((global::Gtk.Box.BoxChild)(this.hbox4 [this.scrolledwindow3]));
+		this.scrolledwindow2 = new global::Gtk.ScrolledWindow ();
+		this.scrolledwindow2.CanFocus = true;
+		this.scrolledwindow2.Name = "scrolledwindow2";
+		this.scrolledwindow2.ShadowType = ((global::Gtk.ShadowType)(1));
+		this.hbox4.Add (this.scrolledwindow2);
+		global::Gtk.Box.BoxChild w41 = ((global::Gtk.Box.BoxChild)(this.hbox4 [this.scrolledwindow2]));
 		w41.Position = 1;
 		this.GtkAlignment4.Add (this.hbox4);
 		this.frameYoutube.Add (this.GtkAlignment4);
