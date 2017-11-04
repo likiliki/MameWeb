@@ -21,6 +21,10 @@ public partial class MainWindow
 	
 	private global::Gtk.Action FullScreenAction;
 	
+	private global::Gtk.Action GoAction;
+	
+	private global::Gtk.Action PlayGameAction;
+	
 	private global::Gtk.VBox vbox1;
 	
 	private global::Gtk.MenuBar menubar1;
@@ -159,6 +163,12 @@ public partial class MainWindow
 		this.FullScreenAction = new global::Gtk.Action ("FullScreenAction", global::Mono.Unix.Catalog.GetString ("Full Screen"), null, null);
 		this.FullScreenAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Full Screen");
 		w1.Add (this.FullScreenAction, "<Mod2>F11");
+		this.GoAction = new global::Gtk.Action ("GoAction", global::Mono.Unix.Catalog.GetString ("Go"), null, null);
+		this.GoAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Go");
+		w1.Add (this.GoAction, null);
+		this.PlayGameAction = new global::Gtk.Action ("PlayGameAction", global::Mono.Unix.Catalog.GetString ("Play Game"), null, null);
+		this.PlayGameAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Play Game");
+		w1.Add (this.PlayGameAction, null);
 		this.UIManager.InsertActionGroup (w1, 0);
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
@@ -172,7 +182,7 @@ public partial class MainWindow
 		this.vbox1.Spacing = 6;
 		this.vbox1.BorderWidth = ((uint)(5));
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='ArchivoAction' action='ArchivoAction'><menuitem name='SalirAction' action='SalirAction'/></menu><menu name='VerAction' action='VerAction'><menuitem name='ModoNormalAction' action='ModoNormalAction'/><menuitem name='ModoImagenesAction' action='ModoImagenesAction'/><menuitem name='ModoYoutubeAction' action='ModoYoutubeAction'/><menuitem name='Action' action='Action'/><menuitem name='FullScreenAction' action='FullScreenAction'/></menu></menubar></ui>");
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='ArchivoAction' action='ArchivoAction'><menuitem name='SalirAction' action='SalirAction'/></menu><menu name='VerAction' action='VerAction'><menuitem name='ModoNormalAction' action='ModoNormalAction'/><menuitem name='ModoImagenesAction' action='ModoImagenesAction'/><menuitem name='ModoYoutubeAction' action='ModoYoutubeAction'/><menuitem name='Action' action='Action'/><menuitem name='FullScreenAction' action='FullScreenAction'/></menu><menu name='GoAction' action='GoAction'><menuitem name='PlayGameAction' action='PlayGameAction'/></menu></menubar></ui>");
 		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
 		this.menubar1.Name = "menubar1";
 		this.vbox1.Add (this.menubar1);
@@ -288,13 +298,12 @@ public partial class MainWindow
 		// Container child hpaned1.Gtk.Paned+PanedChild
 		this.vbox2 = new global::Gtk.VBox ();
 		this.vbox2.Name = "vbox2";
-		this.vbox2.Spacing = 10;
 		// Container child vbox2.Gtk.Box+BoxChild
 		this.frame1 = new global::Gtk.Frame ();
 		this.frame1.Name = "frame1";
 		this.frame1.ShadowType = ((global::Gtk.ShadowType)(1));
 		this.frame1.LabelYalign = 0F;
-		this.frame1.BorderWidth = ((uint)(1));
+		this.frame1.BorderWidth = ((uint)(5));
 		// Container child frame1.Gtk.Container+ContainerChild
 		this.GtkAlignment3 = new global::Gtk.Alignment (0F, 0F, 1F, 1F);
 		this.GtkAlignment3.Name = "GtkAlignment3";
@@ -326,6 +335,7 @@ public partial class MainWindow
 		this.frame2 = new global::Gtk.Frame ();
 		this.frame2.Name = "frame2";
 		this.frame2.ShadowType = ((global::Gtk.ShadowType)(1));
+		this.frame2.BorderWidth = ((uint)(5));
 		// Container child frame2.Gtk.Container+ContainerChild
 		this.GtkAlignment4 = new global::Gtk.Alignment (0F, 0F, 1F, 1F);
 		this.GtkAlignment4.Name = "GtkAlignment4";
@@ -340,7 +350,7 @@ public partial class MainWindow
 		this.button5.Name = "button5";
 		this.button5.UseUnderline = true;
 		this.button5.BorderWidth = ((uint)(5));
-		this.button5.Label = global::Mono.Unix.Catalog.GetString ("GtkButton");
+		this.button5.Label = global::Mono.Unix.Catalog.GetString ("Añadir >>");
 		this.hbox2.Add (this.button5);
 		global::Gtk.Box.BoxChild w18 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.button5]));
 		w18.Position = 0;
@@ -361,7 +371,7 @@ public partial class MainWindow
 		this.button6.Name = "button6";
 		this.button6.UseUnderline = true;
 		this.button6.BorderWidth = ((uint)(5));
-		this.button6.Label = global::Mono.Unix.Catalog.GetString ("GtkButton");
+		this.button6.Label = global::Mono.Unix.Catalog.GetString ("<< Eliminar");
 		this.hbox2.Add (this.button6);
 		global::Gtk.Box.BoxChild w20 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.button6]));
 		w20.Position = 2;
@@ -373,9 +383,10 @@ public partial class MainWindow
 		this.button7.Name = "button7";
 		this.button7.UseUnderline = true;
 		this.button7.BorderWidth = ((uint)(5));
-		this.button7.Label = global::Mono.Unix.Catalog.GetString ("GtkButton");
+		this.button7.Label = global::Mono.Unix.Catalog.GetString ("Edit FAV");
 		this.hbox2.Add (this.button7);
 		global::Gtk.Box.BoxChild w21 = ((global::Gtk.Box.BoxChild)(this.hbox2 [this.button7]));
+		w21.PackType = ((global::Gtk.PackType)(1));
 		w21.Position = 3;
 		w21.Expand = false;
 		w21.Fill = false;
@@ -400,7 +411,7 @@ public partial class MainWindow
 		this.frame3.Name = "frame3";
 		this.frame3.ShadowType = ((global::Gtk.ShadowType)(1));
 		this.frame3.LabelYalign = 0F;
-		this.frame3.BorderWidth = ((uint)(1));
+		this.frame3.BorderWidth = ((uint)(5));
 		// Container child frame3.Gtk.Container+ContainerChild
 		this.GtkAlignment5 = new global::Gtk.Alignment (0F, 0F, 1F, 1F);
 		this.GtkAlignment5.Name = "GtkAlignment5";
@@ -422,8 +433,9 @@ public partial class MainWindow
 		this.GtkLabel11.WidthRequest = 350;
 		this.GtkLabel11.HeightRequest = 30;
 		this.GtkLabel11.Name = "GtkLabel11";
-		this.GtkLabel11.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>GtkFrame</b>");
+		this.GtkLabel11.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>Lista de Favoritos</b>");
 		this.GtkLabel11.UseMarkup = true;
+		this.GtkLabel11.Justify = ((global::Gtk.Justification)(2));
 		this.frame3.LabelWidget = this.GtkLabel11;
 		this.vbox2.Add (this.frame3);
 		global::Gtk.Box.BoxChild w28 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.frame3]));
@@ -543,7 +555,7 @@ public partial class MainWindow
 		this.frameYoutube.Name = "frameYoutube";
 		this.frameYoutube.ShadowType = ((global::Gtk.ShadowType)(1));
 		this.frameYoutube.LabelYalign = 0F;
-		this.frameYoutube.BorderWidth = ((uint)(1));
+		this.frameYoutube.BorderWidth = ((uint)(5));
 		// Container child frameYoutube.Gtk.Container+ContainerChild
 		this.GtkAlignment10 = new global::Gtk.Alignment (0F, 0F, 1F, 1F);
 		this.GtkAlignment10.Name = "GtkAlignment10";
@@ -663,8 +675,8 @@ public partial class MainWindow
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
-		this.DefaultWidth = 1091;
-		this.DefaultHeight = 727;
+		this.DefaultWidth = 1237;
+		this.DefaultHeight = 762;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.DestroyEvent += new global::Gtk.DestroyEventHandler (this.OnDestroyEventClicked);
@@ -674,7 +686,14 @@ public partial class MainWindow
 		this.ModoImagenesAction.Activated += new global::System.EventHandler (this.ModoImagenesClicked);
 		this.ModoYoutubeAction.Activated += new global::System.EventHandler (this.ModoYoutubeClicked);
 		this.FullScreenAction.Activated += new global::System.EventHandler (this.FullScreenClicked);
+		this.PlayGameAction.Activated += new global::System.EventHandler (this.GoPlayGameActivated);
 		this.entryFind.Activated += new global::System.EventHandler (this.EntryFindActivated);
 		this.buttonSearch.Clicked += new global::System.EventHandler (this.ButtonSearchClicked);
+		this.button2.Clicked += new global::System.EventHandler (this.PicClicked);
+		this.button3.Clicked += new global::System.EventHandler (this.YoutubeClicked);
+		this.button4.Clicked += new global::System.EventHandler (this.PlayGameClicked);
+		this.button5.Clicked += new global::System.EventHandler (this.AnyadirJuegoClick);
+		this.button6.Clicked += new global::System.EventHandler (this.EliminarJuegoClicked);
+		this.button7.Clicked += new global::System.EventHandler (this.EditFavsClick);
 	}
 }

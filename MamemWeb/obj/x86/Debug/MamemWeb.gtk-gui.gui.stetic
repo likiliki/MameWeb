@@ -9,7 +9,7 @@
     <widget-library name="../bin/Debug/MamemWeb.exe" internal="true" />
     <widget-library name="webkit-sharp, Version=1.1.15.0, Culture=neutral, PublicKeyToken=eaa1d335d2e19745" />
   </import>
-  <widget class="Gtk.Window" id="MainWindow" design-size="1091 727">
+  <widget class="Gtk.Window" id="MainWindow" design-size="1237 762">
     <action-group name="Default">
       <action id="ArchivoAction">
         <property name="Type">Action</property>
@@ -60,6 +60,17 @@
         <property name="ShortLabel" translatable="yes">Full Screen</property>
         <signal name="Activated" handler="FullScreenClicked" />
       </action>
+      <action id="GoAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Go</property>
+        <property name="ShortLabel" translatable="yes">Go</property>
+      </action>
+      <action id="PlayGameAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Play Game</property>
+        <property name="ShortLabel" translatable="yes">Play Game</property>
+        <signal name="Activated" handler="GoPlayGameActivated" />
+      </action>
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">MameWeb</property>
@@ -87,6 +98,9 @@
                 <node type="Menuitem" action="ModoYoutubeAction" />
                 <node type="Menuitem" action="Action" />
                 <node type="Menuitem" action="FullScreenAction" />
+              </node>
+              <node type="Menu" action="GoAction">
+                <node type="Menuitem" action="PlayGameAction" />
               </node>
             </node>
           </widget>
@@ -154,6 +168,7 @@
                 <property name="Type">TextOnly</property>
                 <property name="Label" translatable="yes">ROM Imagenes</property>
                 <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="PicClicked" />
               </widget>
               <packing>
                 <property name="Position">3</property>
@@ -169,6 +184,7 @@
                 <property name="Type">TextOnly</property>
                 <property name="Label" translatable="yes">ROM Youtube</property>
                 <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="YoutubeClicked" />
               </widget>
               <packing>
                 <property name="Position">4</property>
@@ -198,6 +214,7 @@
                 <property name="Icon">stock:gtk-media-play Menu</property>
                 <property name="Label" translatable="yes" />
                 <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="PlayGameClicked" />
               </widget>
               <packing>
                 <property name="Position">6</property>
@@ -236,13 +253,12 @@
             <child>
               <widget class="Gtk.VBox" id="vbox2">
                 <property name="MemberName" />
-                <property name="Spacing">10</property>
                 <child>
                   <widget class="Gtk.Frame" id="frame1">
                     <property name="MemberName" />
                     <property name="ShadowType">In</property>
                     <property name="LabelYalign">0</property>
-                    <property name="BorderWidth">1</property>
+                    <property name="BorderWidth">5</property>
                     <child>
                       <widget class="Gtk.Alignment" id="GtkAlignment3">
                         <property name="MemberName" />
@@ -287,6 +303,7 @@
                   <widget class="Gtk.Frame" id="frame2">
                     <property name="MemberName" />
                     <property name="ShadowType">In</property>
+                    <property name="BorderWidth">5</property>
                     <child>
                       <widget class="Gtk.Alignment" id="GtkAlignment4">
                         <property name="MemberName" />
@@ -302,9 +319,10 @@
                                 <property name="MemberName" />
                                 <property name="CanFocus">True</property>
                                 <property name="Type">TextOnly</property>
-                                <property name="Label" translatable="yes">GtkButton</property>
+                                <property name="Label" translatable="yes">Añadir &gt;&gt;</property>
                                 <property name="UseUnderline">True</property>
                                 <property name="BorderWidth">5</property>
+                                <signal name="Clicked" handler="AnyadirJuegoClick" />
                               </widget>
                               <packing>
                                 <property name="Position">0</property>
@@ -330,9 +348,10 @@
                                 <property name="MemberName" />
                                 <property name="CanFocus">True</property>
                                 <property name="Type">TextOnly</property>
-                                <property name="Label" translatable="yes">GtkButton</property>
+                                <property name="Label" translatable="yes">&lt;&lt; Eliminar</property>
                                 <property name="UseUnderline">True</property>
                                 <property name="BorderWidth">5</property>
+                                <signal name="Clicked" handler="EliminarJuegoClicked" />
                               </widget>
                               <packing>
                                 <property name="Position">2</property>
@@ -346,11 +365,13 @@
                                 <property name="MemberName" />
                                 <property name="CanFocus">True</property>
                                 <property name="Type">TextOnly</property>
-                                <property name="Label" translatable="yes">GtkButton</property>
+                                <property name="Label" translatable="yes">Edit FAV</property>
                                 <property name="UseUnderline">True</property>
                                 <property name="BorderWidth">5</property>
+                                <signal name="Clicked" handler="EditFavsClick" />
                               </widget>
                               <packing>
+                                <property name="PackType">End</property>
                                 <property name="Position">3</property>
                                 <property name="AutoSize">True</property>
                                 <property name="Expand">False</property>
@@ -388,7 +409,7 @@
                     <property name="HeightRequest">200</property>
                     <property name="ShadowType">In</property>
                     <property name="LabelYalign">0</property>
-                    <property name="BorderWidth">1</property>
+                    <property name="BorderWidth">5</property>
                     <child>
                       <widget class="Gtk.Alignment" id="GtkAlignment5">
                         <property name="MemberName" />
@@ -417,8 +438,9 @@
                         <property name="MemberName" />
                         <property name="WidthRequest">350</property>
                         <property name="HeightRequest">30</property>
-                        <property name="LabelProp" translatable="yes">&lt;b&gt;GtkFrame&lt;/b&gt;</property>
+                        <property name="LabelProp" translatable="yes">&lt;b&gt;Lista de Favoritos&lt;/b&gt;</property>
                         <property name="UseMarkup">True</property>
+                        <property name="Justify">Center</property>
                       </widget>
                       <packing>
                         <property name="type">label_item</property>
@@ -585,7 +607,7 @@
                     <property name="MemberName" />
                     <property name="ShadowType">In</property>
                     <property name="LabelYalign">0</property>
-                    <property name="BorderWidth">1</property>
+                    <property name="BorderWidth">5</property>
                     <child>
                       <widget class="Gtk.Alignment" id="GtkAlignment10">
                         <property name="MemberName" />

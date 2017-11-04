@@ -185,6 +185,86 @@ public partial class MainWindow: Gtk.Window
 		//throw new NotImplementedException ();
 	}
 
+	protected void ButtonSearchClicked (object sender, EventArgs e)
+	{
+		//throw new NotImplementedException ();
+	}
+
+	protected void GoPlayGameActivated (object sender, EventArgs e)
+	{
+		//throw new NotImplementedException ();
+	}
+
+	protected void PicClicked (object sender, EventArgs e)
+	{
+		//throw new NotImplementedException ();
+	}
+
+	protected void YoutubeClicked (object sender, EventArgs e)
+	{
+		//throw new NotImplementedException ();
+	}
+
+	protected void PlayGameClicked (object sender, EventArgs e)
+	{
+		//throw new NotImplementedException ();
+	}
+
+	protected void AnyadirJuegoClick (object sender, EventArgs e)
+	{
+		//throw new NotImplementedException ();
+	}
+
+	protected void EliminarJuegoClicked (object sender, EventArgs e)
+	{
+		//throw new NotImplementedException ();
+	}
+
+	protected void EditFavsClick (object sender, EventArgs e)
+	{
+		//throw new NotImplementedException ();
+	}
+
+	protected void PicBackClicked (object sender, EventArgs e)
+	{
+		//throw new NotImplementedException ();
+	}
+
+	protected void PicForClicked (object sender, EventArgs e)
+	{
+		throw new NotImplementedException ();
+	}
+
+	protected void PicZoomInClick (object sender, EventArgs e)
+	{
+		//throw new NotImplementedException ();
+	}
+
+	protected void PicZoomOutClick (object sender, EventArgs e)
+	{
+		//throw new NotImplementedException ();
+	}
+
+	protected void BackTubeClick (object sender, EventArgs e)
+	{
+		//throw new NotImplementedException ();
+	}
+
+	protected void ForTubeClick (object sender, EventArgs e)
+	{
+		//throw new NotImplementedException ();
+	}
+
+	protected void ZoomInTube (object sender, EventArgs e)
+	{
+		//throw new NotImplementedException ();
+	}
+
+	protected void ZoomOutClick (object sender, EventArgs e)
+	{
+		//throw new NotImplementedException ();
+	}
+
 	private void show_error(string mes)
 	{
 		MessageDialog md = new MessageDialog
@@ -270,11 +350,6 @@ public partial class MainWindow: Gtk.Window
 			} 
 			return store;		
 		}
-	}
-
-	protected void ButtonSearchClicked (object sender, EventArgs e)
-	{
-		throw new NotImplementedException ();
 	}
 
 	//-------------------------------------
