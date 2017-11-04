@@ -104,7 +104,7 @@
             <child>
               <widget class="Gtk.Label" id="label2">
                 <property name="MemberName" />
-                <property name="LabelProp" translatable="yes">Buscar-&gt;</property>
+                <property name="LabelProp" translatable="yes">         ----&gt;</property>
               </widget>
               <packing>
                 <property name="Position">0</property>
@@ -129,12 +129,15 @@
               </packing>
             </child>
             <child>
-              <widget class="Gtk.Button" id="button1">
+              <widget class="Gtk.Button" id="buttonSearch">
                 <property name="MemberName" />
+                <property name="WidthRequest">50</property>
                 <property name="CanFocus">True</property>
-                <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">GtkButton</property>
+                <property name="Type">TextAndIcon</property>
+                <property name="Icon">stock:gtk-find Menu</property>
+                <property name="Label" translatable="yes" />
                 <property name="UseUnderline">True</property>
+                <signal name="Clicked" handler="ButtonSearchClicked" />
               </widget>
               <packing>
                 <property name="Position">2</property>
@@ -148,7 +151,7 @@
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">GtkButton</property>
+                <property name="Label" translatable="yes">ROM Imagenes</property>
                 <property name="UseUnderline">True</property>
               </widget>
               <packing>
@@ -163,7 +166,7 @@
                 <property name="MemberName" />
                 <property name="CanFocus">True</property>
                 <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">GtkButton</property>
+                <property name="Label" translatable="yes">ROM Youtube</property>
                 <property name="UseUnderline">True</property>
               </widget>
               <packing>
@@ -174,15 +177,29 @@
               </packing>
             </child>
             <child>
-              <widget class="Gtk.Button" id="button4">
+              <widget class="Gtk.Label" id="label4">
                 <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="Type">TextOnly</property>
-                <property name="Label" translatable="yes">GtkButton</property>
-                <property name="UseUnderline">True</property>
+                <property name="LabelProp" translatable="yes">     PLAY Game&gt;</property>
               </widget>
               <packing>
                 <property name="Position">5</property>
+                <property name="AutoSize">True</property>
+                <property name="Expand">False</property>
+                <property name="Fill">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.Button" id="button4">
+                <property name="MemberName" />
+                <property name="WidthRequest">50</property>
+                <property name="CanFocus">True</property>
+                <property name="Type">TextAndIcon</property>
+                <property name="Icon">stock:gtk-media-play Menu</property>
+                <property name="Label" translatable="yes" />
+                <property name="UseUnderline">True</property>
+              </widget>
+              <packing>
+                <property name="Position">6</property>
                 <property name="AutoSize">True</property>
                 <property name="Expand">False</property>
                 <property name="Fill">False</property>
@@ -223,7 +240,7 @@
                     <property name="MemberName" />
                     <property name="ShadowType">None</property>
                     <child>
-                      <widget class="Gtk.Alignment" id="GtkAlignment">
+                      <widget class="Gtk.Alignment" id="GtkAlignment3">
                         <property name="MemberName" />
                         <property name="Xalign">0</property>
                         <property name="Yalign">0</property>
@@ -266,7 +283,7 @@
                     <property name="MemberName" />
                     <property name="ShadowType">None</property>
                     <child>
-                      <widget class="Gtk.Alignment" id="GtkAlignment1">
+                      <widget class="Gtk.Alignment" id="GtkAlignment4">
                         <property name="MemberName" />
                         <property name="Xalign">0</property>
                         <property name="Yalign">0</property>
@@ -362,7 +379,7 @@
                     <property name="HeightRequest">200</property>
                     <property name="ShadowType">None</property>
                     <child>
-                      <widget class="Gtk.Alignment" id="GtkAlignment2">
+                      <widget class="Gtk.Alignment" id="GtkAlignment5">
                         <property name="MemberName" />
                         <property name="Xalign">0</property>
                         <property name="Yalign">0</property>
@@ -417,7 +434,7 @@
                     <property name="MemberName" />
                     <property name="ShadowType">None</property>
                     <child>
-                      <widget class="Gtk.Alignment" id="GtkAlignment3">
+                      <widget class="Gtk.Alignment" id="GtkAlignment6">
                         <property name="MemberName" />
                         <property name="Xalign">0</property>
                         <property name="Yalign">0</property>
@@ -434,11 +451,13 @@
                                   <widget class="Gtk.Button" id="button8">
                                     <property name="MemberName" />
                                     <property name="CanFocus">True</property>
-                                    <property name="Type">TextOnly</property>
-                                    <property name="Label" translatable="yes">GtkButton</property>
+                                    <property name="Type">TextAndIcon</property>
+                                    <property name="Icon">stock:gtk-go-back Menu</property>
+                                    <property name="Label" translatable="yes" />
                                     <property name="UseUnderline">True</property>
                                   </widget>
                                   <packing>
+                                    <property name="PackType">End</property>
                                     <property name="Position">0</property>
                                     <property name="AutoSize">True</property>
                                     <property name="Expand">False</property>
@@ -449,11 +468,13 @@
                                   <widget class="Gtk.Button" id="button9">
                                     <property name="MemberName" />
                                     <property name="CanFocus">True</property>
-                                    <property name="Type">TextOnly</property>
-                                    <property name="Label" translatable="yes">GtkButton</property>
+                                    <property name="Type">TextAndIcon</property>
+                                    <property name="Icon">stock:gtk-go-forward Menu</property>
+                                    <property name="Label" translatable="yes" />
                                     <property name="UseUnderline">True</property>
                                   </widget>
                                   <packing>
+                                    <property name="PackType">End</property>
                                     <property name="Position">1</property>
                                     <property name="AutoSize">True</property>
                                     <property name="Expand">False</property>
@@ -464,11 +485,13 @@
                                   <widget class="Gtk.Button" id="button10">
                                     <property name="MemberName" />
                                     <property name="CanFocus">True</property>
-                                    <property name="Type">TextOnly</property>
-                                    <property name="Label" translatable="yes">GtkButton</property>
+                                    <property name="Type">TextAndIcon</property>
+                                    <property name="Icon">stock:gtk-zoom-in Menu</property>
+                                    <property name="Label" translatable="yes" />
                                     <property name="UseUnderline">True</property>
                                   </widget>
                                   <packing>
+                                    <property name="PackType">End</property>
                                     <property name="Position">2</property>
                                     <property name="AutoSize">True</property>
                                     <property name="Expand">False</property>
@@ -479,11 +502,13 @@
                                   <widget class="Gtk.Button" id="button11">
                                     <property name="MemberName" />
                                     <property name="CanFocus">True</property>
-                                    <property name="Type">TextOnly</property>
-                                    <property name="Label" translatable="yes">GtkButton</property>
+                                    <property name="Type">TextAndIcon</property>
+                                    <property name="Icon">stock:gtk-zoom-out Menu</property>
+                                    <property name="Label" translatable="yes" />
                                     <property name="UseUnderline">True</property>
                                   </widget>
                                   <packing>
+                                    <property name="PackType">End</property>
                                     <property name="Position">3</property>
                                     <property name="AutoSize">True</property>
                                     <property name="Expand">False</property>
@@ -544,7 +569,7 @@
                     <property name="MemberName" />
                     <property name="ShadowType">None</property>
                     <child>
-                      <widget class="Gtk.Alignment" id="GtkAlignment4">
+                      <widget class="Gtk.Alignment" id="GtkAlignment7">
                         <property name="MemberName" />
                         <property name="Xalign">0</property>
                         <property name="Yalign">0</property>

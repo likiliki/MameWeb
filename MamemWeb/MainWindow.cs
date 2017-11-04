@@ -35,10 +35,10 @@ public partial class MainWindow: Gtk.Window
 		//cargarFile (FILENAME);
 
 		SetUp ();
-		AddData ();
+		//AddData ();
 
-		DataRefresh (SELI);
-		DataFavRefresh ();
+		//DataRefresh (SELI);
+		//DataFavRefresh ();
 		//guardarFile (FILENAME);
 	}
 
@@ -86,7 +86,7 @@ public partial class MainWindow: Gtk.Window
 	{
 		try{
 			MyTreeNode node = (MyTreeNode) nodeview1.NodeSelection.SelectedNode;
-			labelPictures.Text	= "Imagenes de: " + node.Game;
+			labelImagenes.Text	= "Imagenes de: " + node.Game;
 			labelSelectedRom.Text = "Selected ROM -> " + node.Game;
 			URLweb = "http://www.google.es/search?q=ROM " + node.Game + "+arcade&tbm=isch";
 			webPictures.Open (URLweb);
@@ -184,4 +184,141 @@ public partial class MainWindow: Gtk.Window
 	{
 		//throw new NotImplementedException ();
 	}
+
+	private void show_error(string mes)
+	{
+		MessageDialog md = new MessageDialog
+			(this, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, mes); 
+		md.Run ();
+		md.Destroy ();
+	}
+
+	//------------------------------------------------------------------
+	Gtk.NodeStore Store {
+		get {
+			//string line = "";
+			string s = "";
+			string r = "";
+			Gtk.NodeStore store = new Gtk.NodeStore (typeof (MyTreeNode));
+
+			try{
+				GtkLabel7.Text = "Lista: "+ self.Hyperist[SELI].NameList;
+				int tam = self.Hyperist[SELI].game.Count;
+				for(int  i=0; i<tam; i++)
+				{
+					r = self.Hyperist[SELI].game[i].Rom;
+					s = self.Hyperist[SELI].game[i].Name;
+					store.AddNode (new MyTreeNode (r, s));
+				}
+			}
+			catch(Exception err){
+
+				show_error (err.Message);
+			} 
+			return store;		
+		}
+	}
+
+	//------------------------------------------------------------------
+	//--FUNCTIONS OF TREESTORE------------------------------------------
+	//------------------------------------------------------------------
+	Gtk.NodeStore SearchStore {
+		get {
+			//string line = "";
+			string s = "";
+			string r = "";
+			Gtk.NodeStore search_store = new Gtk.NodeStore (typeof (MyTreeNode));
+
+			try{
+				int tam = searchGames.game.Count;
+				for(int i=0; i<tam; i++)
+				{
+					r = searchGames.game[i].Rom;
+					s = searchGames.game[i].Name;
+					search_store.AddNode (new MyTreeNode (r, s));
+				}
+			}
+			catch(Exception err){
+
+				show_error (err.Message);
+			} 
+			return search_store;		
+		}
+	}
+
+	//------------------------------------------------------------------
+	Gtk.NodeStore FavStore {
+		get {
+			//string line = "";
+			string l = "";
+			int n = 0;
+			int id = 0;
+			Gtk.NodeStore store = new Gtk.NodeStore (typeof (MyFavTreeNode));
+
+			try{
+				int tam = self.Hyperist.Count;
+				for(int  i=1; i<tam; i++)
+				{
+					id = self.Hyperist[i].Id;
+					l = self.Hyperist[i].NameList;
+					n = self.Hyperist[i].game.Count;
+					store.AddNode (new MyFavTreeNode (id, l, n));
+				}
+			}
+			catch(Exception err){
+				show_error (err.Message);
+			} 
+			return store;		
+		}
+	}
+
+	protected void ButtonSearchClicked (object sender, EventArgs e)
+	{
+		throw new NotImplementedException ();
+	}
+
+	//-------------------------------------
+	// CLASS   of   NODEVIEW     ----------
+	//-------------------------------------
+	public class MyTreeNode : Gtk.TreeNode 
+	{
+		/// <summary>
+		/// Initializes a new instance of the <see cref="MainWindow+MyTreeNode"/> class.
+		/// </summary>
+		/// <param name="favUri">Fav URI.</param>
+		public MyTreeNode (string rom, string game)
+		{
+			Game = game;
+			Rom = rom;
+		}
+
+		[Gtk.TreeNodeValue (Column=0)]
+		public string Game;
+
+		[Gtk.TreeNodeValue (Column=1)]
+		public string Rom;
+	}
+
+	//-------------------------------------
+	// CLASS   of   NODEVIEW     ----------
+	//-------------------------------------
+	public class MyFavTreeNode : Gtk.TreeNode 
+	{
+		public MyFavTreeNode (int id, string list, int no)
+		{
+			Lista = list;
+			No = no;
+			Id = id;
+		}
+
+		[Gtk.TreeNodeValue (Column=0)]
+		public int Id;
+
+		[Gtk.TreeNodeValue (Column=1)]
+		public string Lista;
+
+		[Gtk.TreeNodeValue (Column=2)]
+		public int No;
+	}
+
 }
