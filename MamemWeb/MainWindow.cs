@@ -82,6 +82,16 @@ public partial class MainWindow: Gtk.Window
 		WebPictureSearch ();
 	}
 
+	protected void PicClicked (object sender, EventArgs e)
+	{
+		WebPictureSearch ();
+	}
+
+	protected void YoutubeClicked (object sender, EventArgs e)
+	{
+		WebYoutubeSearch ();
+	}
+
 	private void WebPictureSearch()
 	{
 		try{
@@ -139,25 +149,168 @@ public partial class MainWindow: Gtk.Window
 		frameYoutube.LabelXalign = 0.35f;
 	}
 
+	protected void GoPlayGameActivated (object sender, EventArgs e)
+	{
+		PlayTheGame ();
+	}
+
+	protected void PlayGameClicked (object sender, EventArgs e)
+	{
+		PlayTheGame ();
+	}
+
+	protected void PlayTheGame()
+	{
+		try{
+			MyTreeNode node = (MyTreeNode) nodeview1.NodeSelection.SelectedNode;
+			labelSelectedRom.Text = "Selected ROM -> " + node.Game;
+
+			Console.WriteLine(node.Rom);
+			LanzarJuego("mame", node.Rom);
+		}
+		catch (Exception){
+			show_error ("No Rom Selected \n\n Select a Game");
+		}
+	}
+
+	protected void EntryFindActivated (object sender, EventArgs e)
+	{
+		BuscaJuego (entryFind.Text);
+	}
+
+	protected void ButtonSearchClicked (object sender, EventArgs e)
+	{
+		BuscaJuego (entryFind.Text);
+	}
+
+	private void BuscaJuego(string juego)
+	{
+		if (juego != "") {
+			SearchDataRefresh (juego);
+		} 
+		else {
+			DataRefresh (0);
+		}
+	}
+
+	private void LanzarJuego(string mame, string juego)
+	{
+		try {
+			System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo ();
+			startInfo.FileName = mame;
+			startInfo.Arguments = juego;
+
+			startInfo.UseShellExecute = false;
+			startInfo.ErrorDialog = false;
+			startInfo.CreateNoWindow = false;
+
+			//Inicializa el proceso
+			System.Diagnostics.Process proc = new System.Diagnostics.Process();
+			proc.StartInfo = startInfo;
+			proc.Start();
+		}				
+		catch (Exception err) {
+			show_error (err.Message);
+		}
+	}
+
+	protected void QuitCliked(object o, EventArgs e)
+	{
+		Salir ();
+	}
+
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
 	{
-		Application.Quit ();
+		Salir ();
 		a.RetVal = true;
 	}
 
 	protected void OnDestroyEventClicked (object o, DestroyEventArgs args)
 	{
-		//throw new NotImplementedException ();
+		Salir ();
+	}
+
+	protected void Salir ()
+	{
+		//guardarFile (FILENAME);
+		Application.Quit ();
+	}
+
+	protected void PicBackClicked (object sender, EventArgs e)
+	{
+		try
+		{
+			webPictures.GoBack ();
+
+		}
+		catch (Exception){}
+	}
+
+	protected void PicForClicked (object sender, EventArgs e)
+	{
+		try
+		{
+			webPictures.GoForward ();
+
+		}
+		catch (Exception){}
+	}
+
+	protected void PicZoomInClick (object sender, EventArgs e)
+	{
+		try
+		{
+			webPictures.ZoomIn ();
+
+		}
+		catch (Exception){}
+	}
+
+	protected void PicZoomOutClick (object sender, EventArgs e)
+	{
+		try
+		{
+			webPictures.ZoomOut ();
+
+		}
+		catch (Exception){}
+	}
+
+	protected void BackTubeClick (object sender, EventArgs e)
+	{
+		try{
+			webYoutube.GoBack();
+		}
+		catch(Exception){}
+	}
+
+	protected void ForTubeClick (object sender, EventArgs e)
+	{
+		try{
+			webYoutube.GoForward();
+		}
+		catch(Exception){}
+	}
+
+	protected void ZoomInTube (object sender, EventArgs e)
+	{
+		try{
+			webYoutube.ZoomIn();
+		}
+		catch(Exception){}
+	}
+
+	protected void ZoomOutTube (object sender, EventArgs e)
+	{
+		try{
+			webYoutube.ZoomOut();
+		}
+		catch(Exception){}
 	}
 
 	protected void OnFocusInEvent(object o, FocusInEventArgs args)
 	{
 		Console.WriteLine ("OnFocusInEvent -- MainWindow.cs");
-	}
-
-	protected void QuitCliked(object o, EventArgs e)
-	{
-		//throw new NotImplementedException ();
 	}
 
 	protected void ModoNormalClicked (object sender, EventArgs e)
@@ -179,37 +332,6 @@ public partial class MainWindow: Gtk.Window
 	{
 		//throw new NotImplementedException ();
 	}
-
-	protected void EntryFindActivated (object sender, EventArgs e)
-	{
-		//throw new NotImplementedException ();
-	}
-
-	protected void ButtonSearchClicked (object sender, EventArgs e)
-	{
-		//throw new NotImplementedException ();
-	}
-
-	protected void GoPlayGameActivated (object sender, EventArgs e)
-	{
-		//throw new NotImplementedException ();
-	}
-
-	protected void PicClicked (object sender, EventArgs e)
-	{
-		//throw new NotImplementedException ();
-	}
-
-	protected void YoutubeClicked (object sender, EventArgs e)
-	{
-		//throw new NotImplementedException ();
-	}
-
-	protected void PlayGameClicked (object sender, EventArgs e)
-	{
-		//throw new NotImplementedException ();
-	}
-
 	protected void AnyadirJuegoClick (object sender, EventArgs e)
 	{
 		//throw new NotImplementedException ();
@@ -221,46 +343,6 @@ public partial class MainWindow: Gtk.Window
 	}
 
 	protected void EditFavsClick (object sender, EventArgs e)
-	{
-		//throw new NotImplementedException ();
-	}
-
-	protected void PicBackClicked (object sender, EventArgs e)
-	{
-		//throw new NotImplementedException ();
-	}
-
-	protected void PicForClicked (object sender, EventArgs e)
-	{
-		throw new NotImplementedException ();
-	}
-
-	protected void PicZoomInClick (object sender, EventArgs e)
-	{
-		//throw new NotImplementedException ();
-	}
-
-	protected void PicZoomOutClick (object sender, EventArgs e)
-	{
-		//throw new NotImplementedException ();
-	}
-
-	protected void BackTubeClick (object sender, EventArgs e)
-	{
-		//throw new NotImplementedException ();
-	}
-
-	protected void ForTubeClick (object sender, EventArgs e)
-	{
-		//throw new NotImplementedException ();
-	}
-
-	protected void ZoomInTube (object sender, EventArgs e)
-	{
-		//throw new NotImplementedException ();
-	}
-
-	protected void ZoomOutClick (object sender, EventArgs e)
 	{
 		//throw new NotImplementedException ();
 	}

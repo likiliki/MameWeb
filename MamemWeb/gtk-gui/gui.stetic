@@ -636,7 +636,7 @@
                                     <property name="Icon">stock:gtk-zoom-out Menu</property>
                                     <property name="Label" translatable="yes" />
                                     <property name="UseUnderline">True</property>
-                                    <signal name="Clicked" handler="ZoomOutClick" />
+                                    <signal name="Clicked" handler="ZoomOutTube" />
                                   </widget>
                                   <packing>
                                     <property name="PackType">End</property>

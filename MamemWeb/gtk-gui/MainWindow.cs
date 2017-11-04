@@ -168,7 +168,7 @@ public partial class MainWindow
 		w1.Add (this.GoAction, null);
 		this.PlayGameAction = new global::Gtk.Action ("PlayGameAction", global::Mono.Unix.Catalog.GetString ("Play Game"), null, null);
 		this.PlayGameAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Play Game");
-		w1.Add (this.PlayGameAction, null);
+		w1.Add (this.PlayGameAction, "<Mod2>F12");
 		this.UIManager.InsertActionGroup (w1, 0);
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
@@ -695,5 +695,13 @@ public partial class MainWindow
 		this.button5.Clicked += new global::System.EventHandler (this.AnyadirJuegoClick);
 		this.button6.Clicked += new global::System.EventHandler (this.EliminarJuegoClicked);
 		this.button7.Clicked += new global::System.EventHandler (this.EditFavsClick);
+		this.button11.Clicked += new global::System.EventHandler (this.PicBackClicked);
+		this.button10.Clicked += new global::System.EventHandler (this.PicForClicked);
+		this.button9.Clicked += new global::System.EventHandler (this.PicZoomInClick);
+		this.button8.Clicked += new global::System.EventHandler (this.PicZoomOutClick);
+		this.button15.Clicked += new global::System.EventHandler (this.BackTubeClick);
+		this.button14.Clicked += new global::System.EventHandler (this.ForTubeClick);
+		this.button13.Clicked += new global::System.EventHandler (this.ZoomInTube);
+		this.button12.Clicked += new global::System.EventHandler (this.ZoomOutTube);
 	}
 }
