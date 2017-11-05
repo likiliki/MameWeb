@@ -35,10 +35,10 @@ public partial class MainWindow: Gtk.Window
 		//cargarFile (FILENAME);
 
 		SetUp ();
-		//AddData ();
+		AddData ();
 
-		//DataRefresh (SELI);
-		//DataFavRefresh ();
+		DataRefresh (SELI);
+		DataFavRefresh ();
 		//guardarFile (FILENAME);
 	}
 
@@ -132,7 +132,7 @@ public partial class MainWindow: Gtk.Window
 		aux = aux.Replace ("&gws_rd=ssl", "");
 
 		labelImagenes.Text	= "Imagenes de: " + aux;
-		frameImegenes.LabelXalign = 0.35f;
+		frameImagenes.LabelXalign = 0.35f;
 	}
 
 
@@ -308,43 +308,120 @@ public partial class MainWindow: Gtk.Window
 		catch(Exception){}
 	}
 
-	protected void OnFocusInEvent(object o, FocusInEventArgs args)
-	{
-		Console.WriteLine ("OnFocusInEvent -- MainWindow.cs");
-	}
-
 	protected void ModoNormalClicked (object sender, EventArgs e)
 	{
-		//throw new NotImplementedException ();
+		frameImagenes.Show ();
+		frameYoutube.Show ();
+		vbox2.Show ();
+		frame3.Show ();
+		frame2.Show ();
 	}
 
 	protected void ModoImagenesClicked (object sender, EventArgs e)
 	{
-		//throw new NotImplementedException ();
+		frameImagenes.Show ();
+		frameYoutube.Hide ();
+		frame3.Hide ();
+		frame2.Hide ();
 	}
 
 	protected void ModoYoutubeClicked (object sender, EventArgs e)
 	{
-		//throw new NotImplementedException ();
+		frameYoutube.Show ();
+		frame3.Hide ();
+		frame2.Hide ();
+		frameImagenes.Hide ();
 	}
 
 	protected void FullScreenClicked (object sender, EventArgs e)
 	{
-		//throw new NotImplementedException ();
-	}
-	protected void AnyadirJuegoClick (object sender, EventArgs e)
-	{
-		//throw new NotImplementedException ();
+		try
+		{
+			if(FULL){
+				this.Unfullscreen();
+				FULL = false;
+			}
+			else{
+				this.Fullscreen();
+				FULL = true;
+			}
+		}
+		catch(Exception){}
 	}
 
-	protected void EliminarJuegoClicked (object sender, EventArgs e)
+	protected void OnFocusInEvent(object o, FocusInEventArgs args)
 	{
-		//throw new NotImplementedException ();
+		//DataFavRefresh ();
+		//Console.WriteLine ("FOCUS");
 	}
 
 	protected void EditFavsClick (object sender, EventArgs e)
 	{
-		//throw new NotImplementedException ();
+		//WinFavList WinFav = new WinFavList();
+		//WinFav.CargaWinFav (self);
+		//WinFav.Run ();
+		DataFavRefresh ();
+	}
+
+	protected void RowFavActivated (object o, RowActivatedArgs args)
+	{
+		Console.WriteLine (self.Hyperist.Count);
+		MyFavTreeNode node = (MyFavTreeNode) nodeview2.NodeSelection.SelectedNode;
+		Console.WriteLine (node.Id);
+		DataRefresh (node.Id);
+	}
+
+	protected void AnyadirJuegoClick (object sender, EventArgs e)
+	{
+		try{
+			MyTreeNode node = (MyTreeNode) nodeview1.NodeSelection.SelectedNode;
+			MyFavTreeNode node2 = (MyFavTreeNode) nodeview2.NodeSelection.SelectedNode;
+			self.Hyperist [node2.Id].AddGame (node.Game, node.Rom);
+			DataFavRefresh();
+
+		}
+		catch(Exception){
+			show_error ("Selecciona Lista de Favoritos");
+		}
+	}
+
+	protected void EliminarJuegoClicked (object sender, EventArgs e)
+	{
+		try{
+			if(SELI != 0){
+				show_mess();
+			}
+			else{
+				string mes = "Lista FULL\n\nNo es posible eliminar de esta lista";
+				show_error(mes);
+			}
+		}
+		catch(Exception){
+			Console.WriteLine ("Selecciona Juego");
+		}
+	}
+
+	private void show_mess()
+	{
+		MyTreeNode node = (MyTreeNode) nodeview1.NodeSelection.SelectedNode;
+
+		string mess = "¿Desea eliminar el Juego\n\n   " + node.Game +
+			"\n\nde:  " + self.Hyperist[SELI].NameList + " ?"; 
+
+		MessageDialog md = new MessageDialog
+			(this, DialogFlags.Modal, MessageType.Error, ButtonsType.YesNo, mess); 
+
+		if ((ResponseType)md.Run () == ResponseType.Yes) 
+		{
+			Console.WriteLine ("Yes");
+			self.Hyperist[SELI].RemoveGame(node.Rom);
+			DataFavRefresh();
+			DataRefresh(SELI);
+		} 
+		else {
+			Console.WriteLine ("NO");
+		}
+		md.Destroy ();
 	}
 
 	private void show_error(string mes)
@@ -353,6 +430,89 @@ public partial class MainWindow: Gtk.Window
 			(this, DialogFlags.Modal, MessageType.Error, ButtonsType.Ok, mes); 
 		md.Run ();
 		md.Destroy ();
+	}
+
+	//****************************************
+	// ADD  FULL LIST OF MAME
+	private void AddData()
+	{
+		self.Hyperist.Add(new Juegos("FULL", 0));
+		self.Hyperist [SELI].AddGame ("005", "005");
+		self.Hyperist [SELI].AddGame ("10-Yard Fight (World, set 1)", "10yard");
+		self.Hyperist [SELI].AddGame ("10-Yard Fight '85 (US, Taito license)", "10yard85");
+		self.Hyperist [SELI].AddGame ("10-Yard Fight (Japan)", "10yardj");
+		self.Hyperist [SELI].AddGame ("Eleven Beat", "11beat");
+		self.Hyperist [SELI].AddGame ("18 Wheeler (set 1)", "18w");
+		self.Hyperist [SELI].AddGame ("18 Wheeler (set 2)", "18w2");
+		self.Hyperist [SELI].AddGame ("18 Wheeler Deluxe (Rev A) (JPN)", "18wheelr");
+		self.Hyperist [SELI].AddGame ("18 Wheeler (Rev A) (JPN)", "18wheels");
+		self.Hyperist [SELI].AddGame ("1941: Counter Attack (World 900227)", "1941");
+		self.Hyperist [SELI].AddGame ("1941: Counter Attack (Japan)", "1941j");
+		self.Hyperist [SELI].AddGame ("1941: Counter Attack (World)", "1941r1");
+		self.Hyperist [SELI].AddGame ("1941: Counter Attack (USA 900227)", "1941u");
+		self.Hyperist [SELI].AddGame ("1942 (Revision B)", "1942");
+		self.Hyperist [SELI].AddGame ("1942 (Revision A)", "1942a");
+		self.Hyperist [SELI].AddGame ("1942 (Revision A, bootleg)", "1942abl");
+		self.Hyperist [SELI].AddGame ("1942 (First Version)", "1942b");
+		self.Hyperist [SELI].AddGame ("1942 (prototype)", "1942p");
+		self.Hyperist [SELI].AddGame ("1942 (Williams Electronics license)", "1942w");
+		self.Hyperist [SELI].AddGame ("1943: The Battle of Midway (Euro)", "1943");
+		self.Hyperist [SELI].AddGame ("1943: Battle of Midway (bootleg, hack of Japan set)", "1943b");
+		self.Hyperist [SELI].AddGame ("1943: Midway Kaisen (Japan, Rev B)", "1943j");
+		self.Hyperist [SELI].AddGame ("1943: Midway Kaisen (Japan)", "1943ja");
+		self.Hyperist [SELI].AddGame ("1943 Kai: Midway Kaisen (Japan)", "1943kai");
+		self.Hyperist [SELI].AddGame ("1943: The Battle of Midway (US, Rev C)", "1943u");
+		self.Hyperist [SELI].AddGame ("1944: The Loop Master (USA 000620)", "1944");
+	}
+
+	//-------------------------------------
+	//-------    NODES   	STORE ---------
+	//-------------------------------------
+	private void DataRefresh(int sel)
+	{
+		try{
+			SELI = sel;
+			int tam = self.Hyperist[SELI].game.Count;
+			Console.WriteLine(tam);
+			nodeview1.NodeStore = Store;
+			labelRoms.Text = self.Hyperist [SELI].game.Count.ToString() + " Roms.";
+		}
+		catch(Exception){}
+	}
+
+	private void DataFavRefresh ()
+	{
+		nodeview2.NodeStore = FavStore;
+		Console.WriteLine ("DataFavRefresh ();");
+	}
+
+	private void SearchDataRefresh(string searchGame)
+	{
+		searchGame = searchGame.ToLower ();
+		//Console.WriteLine (searchGame + "  ################\n");
+		searchGames = new Juegos(searchGame, -1);
+		bool bool1 = false;
+		int tam = self.Hyperist[SELI].game.Count;
+		//Console.WriteLine ("Tamanyo->  " + tam);
+		string juego1 = "";
+		string rom1 = "";
+
+		for (int i=0; i<tam; i++) 
+		{
+			juego1 = self.Hyperist [SELI].game [i].Name.ToLower ();
+			rom1 = self.Hyperist [SELI].game [i].Rom;
+			bool1 = juego1.Contains (searchGame);
+			//Console.WriteLine (juego1);
+
+			if (bool1) 
+			{
+				searchGames.AddGame(self.Hyperist [SELI].game [i].Name, rom1);
+			}
+		}
+		//searchGames.game.Add (new Juego (rom, Name));
+
+		nodeview1.NodeStore = SearchStore;
+		//labelRoms.Text = searchGames.game.Count.ToString () + "Roms";
 	}
 
 	//------------------------------------------------------------------

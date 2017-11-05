@@ -61,7 +61,7 @@ public partial class MainWindow
 	
 	private global::Gtk.Label GtkLabel7;
 	
-	private global::Gtk.Frame frame2;
+	private global::Gtk.Frame frame3;
 	
 	private global::Gtk.Alignment GtkAlignment4;
 	
@@ -77,7 +77,7 @@ public partial class MainWindow
 	
 	private global::Gtk.Label GtkLabel10;
 	
-	private global::Gtk.Frame frame3;
+	private global::Gtk.Frame frame2;
 	
 	private global::Gtk.Alignment GtkAlignment5;
 	
@@ -89,7 +89,7 @@ public partial class MainWindow
 	
 	private global::Gtk.VPaned vpaned1;
 	
-	private global::Gtk.Frame frameImegenes;
+	private global::Gtk.Frame frameImagenes;
 	
 	private global::Gtk.Alignment GtkAlignment6;
 	
@@ -131,7 +131,7 @@ public partial class MainWindow
 	
 	private global::Gtk.Statusbar statusbar1;
 	
-	private global::Gtk.Label label3;
+	private global::Gtk.Label labelRoms;
 
 	protected virtual void Build ()
 	{
@@ -332,11 +332,11 @@ public partial class MainWindow
 		global::Gtk.Box.BoxChild w17 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.frame1]));
 		w17.Position = 0;
 		// Container child vbox2.Gtk.Box+BoxChild
-		this.frame2 = new global::Gtk.Frame ();
-		this.frame2.Name = "frame2";
-		this.frame2.ShadowType = ((global::Gtk.ShadowType)(1));
-		this.frame2.BorderWidth = ((uint)(5));
-		// Container child frame2.Gtk.Container+ContainerChild
+		this.frame3 = new global::Gtk.Frame ();
+		this.frame3.Name = "frame3";
+		this.frame3.ShadowType = ((global::Gtk.ShadowType)(1));
+		this.frame3.BorderWidth = ((uint)(5));
+		// Container child frame3.Gtk.Container+ContainerChild
 		this.GtkAlignment4 = new global::Gtk.Alignment (0F, 0F, 1F, 1F);
 		this.GtkAlignment4.Name = "GtkAlignment4";
 		this.GtkAlignment4.LeftPadding = ((uint)(12));
@@ -391,28 +391,28 @@ public partial class MainWindow
 		w21.Expand = false;
 		w21.Fill = false;
 		this.GtkAlignment4.Add (this.hbox2);
-		this.frame2.Add (this.GtkAlignment4);
+		this.frame3.Add (this.GtkAlignment4);
 		this.GtkLabel10 = new global::Gtk.Label ();
 		this.GtkLabel10.WidthRequest = 60;
 		this.GtkLabel10.HeightRequest = 30;
 		this.GtkLabel10.Name = "GtkLabel10";
 		this.GtkLabel10.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>Gestion</b>");
 		this.GtkLabel10.UseMarkup = true;
-		this.frame2.LabelWidget = this.GtkLabel10;
-		this.vbox2.Add (this.frame2);
-		global::Gtk.Box.BoxChild w24 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.frame2]));
+		this.frame3.LabelWidget = this.GtkLabel10;
+		this.vbox2.Add (this.frame3);
+		global::Gtk.Box.BoxChild w24 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.frame3]));
 		w24.Position = 1;
 		w24.Expand = false;
 		w24.Fill = false;
 		w24.Padding = ((uint)(5));
 		// Container child vbox2.Gtk.Box+BoxChild
-		this.frame3 = new global::Gtk.Frame ();
-		this.frame3.HeightRequest = 200;
-		this.frame3.Name = "frame3";
-		this.frame3.ShadowType = ((global::Gtk.ShadowType)(1));
-		this.frame3.LabelYalign = 0F;
-		this.frame3.BorderWidth = ((uint)(5));
-		// Container child frame3.Gtk.Container+ContainerChild
+		this.frame2 = new global::Gtk.Frame ();
+		this.frame2.HeightRequest = 200;
+		this.frame2.Name = "frame2";
+		this.frame2.ShadowType = ((global::Gtk.ShadowType)(1));
+		this.frame2.LabelYalign = 0F;
+		this.frame2.BorderWidth = ((uint)(5));
+		// Container child frame2.Gtk.Container+ContainerChild
 		this.GtkAlignment5 = new global::Gtk.Alignment (0F, 0F, 1F, 1F);
 		this.GtkAlignment5.Name = "GtkAlignment5";
 		this.GtkAlignment5.LeftPadding = ((uint)(12));
@@ -428,7 +428,7 @@ public partial class MainWindow
 		this.nodeview2.Name = "nodeview2";
 		this.GtkScrolledWindow1.Add (this.nodeview2);
 		this.GtkAlignment5.Add (this.GtkScrolledWindow1);
-		this.frame3.Add (this.GtkAlignment5);
+		this.frame2.Add (this.GtkAlignment5);
 		this.GtkLabel11 = new global::Gtk.Label ();
 		this.GtkLabel11.WidthRequest = 350;
 		this.GtkLabel11.HeightRequest = 30;
@@ -436,9 +436,9 @@ public partial class MainWindow
 		this.GtkLabel11.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>Lista de Favoritos</b>");
 		this.GtkLabel11.UseMarkup = true;
 		this.GtkLabel11.Justify = ((global::Gtk.Justification)(2));
-		this.frame3.LabelWidget = this.GtkLabel11;
-		this.vbox2.Add (this.frame3);
-		global::Gtk.Box.BoxChild w28 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.frame3]));
+		this.frame2.LabelWidget = this.GtkLabel11;
+		this.vbox2.Add (this.frame2);
+		global::Gtk.Box.BoxChild w28 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.frame2]));
 		w28.Position = 2;
 		w28.Expand = false;
 		this.hpaned1.Add (this.vbox2);
@@ -450,12 +450,12 @@ public partial class MainWindow
 		this.vpaned1.Name = "vpaned1";
 		this.vpaned1.Position = 407;
 		// Container child vpaned1.Gtk.Paned+PanedChild
-		this.frameImegenes = new global::Gtk.Frame ();
-		this.frameImegenes.Name = "frameImegenes";
-		this.frameImegenes.ShadowType = ((global::Gtk.ShadowType)(1));
-		this.frameImegenes.LabelYalign = 0F;
-		this.frameImegenes.BorderWidth = ((uint)(5));
-		// Container child frameImegenes.Gtk.Container+ContainerChild
+		this.frameImagenes = new global::Gtk.Frame ();
+		this.frameImagenes.Name = "frameImagenes";
+		this.frameImagenes.ShadowType = ((global::Gtk.ShadowType)(1));
+		this.frameImagenes.LabelYalign = 0F;
+		this.frameImagenes.BorderWidth = ((uint)(5));
+		// Container child frameImagenes.Gtk.Container+ContainerChild
 		this.GtkAlignment6 = new global::Gtk.Alignment (0F, 0F, 1F, 1F);
 		this.GtkAlignment6.Name = "GtkAlignment6";
 		this.GtkAlignment6.LeftPadding = ((uint)(12));
@@ -539,16 +539,16 @@ public partial class MainWindow
 		global::Gtk.Box.BoxChild w39 = ((global::Gtk.Box.BoxChild)(this.hbox3 [this.scrolledwindow1]));
 		w39.Position = 1;
 		this.GtkAlignment6.Add (this.hbox3);
-		this.frameImegenes.Add (this.GtkAlignment6);
+		this.frameImagenes.Add (this.GtkAlignment6);
 		this.labelImagenes = new global::Gtk.Label ();
 		this.labelImagenes.WidthRequest = 400;
 		this.labelImagenes.HeightRequest = 30;
 		this.labelImagenes.Name = "labelImagenes";
 		this.labelImagenes.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>GtkFrame</b>");
 		this.labelImagenes.UseMarkup = true;
-		this.frameImegenes.LabelWidget = this.labelImagenes;
-		this.vpaned1.Add (this.frameImegenes);
-		global::Gtk.Paned.PanedChild w42 = ((global::Gtk.Paned.PanedChild)(this.vpaned1 [this.frameImegenes]));
+		this.frameImagenes.LabelWidget = this.labelImagenes;
+		this.vpaned1.Add (this.frameImagenes);
+		global::Gtk.Paned.PanedChild w42 = ((global::Gtk.Paned.PanedChild)(this.vpaned1 [this.frameImagenes]));
 		w42.Resize = false;
 		// Container child vpaned1.Gtk.Paned+PanedChild
 		this.frameYoutube = new global::Gtk.Frame ();
@@ -658,11 +658,11 @@ public partial class MainWindow
 		this.statusbar1.Name = "statusbar1";
 		this.statusbar1.Spacing = 6;
 		// Container child statusbar1.Gtk.Box+BoxChild
-		this.label3 = new global::Gtk.Label ();
-		this.label3.Name = "label3";
-		this.label3.LabelProp = global::Mono.Unix.Catalog.GetString ("label3");
-		this.statusbar1.Add (this.label3);
-		global::Gtk.Box.BoxChild w58 = ((global::Gtk.Box.BoxChild)(this.statusbar1 [this.label3]));
+		this.labelRoms = new global::Gtk.Label ();
+		this.labelRoms.Name = "labelRoms";
+		this.labelRoms.LabelProp = global::Mono.Unix.Catalog.GetString ("label3");
+		this.statusbar1.Add (this.labelRoms);
+		global::Gtk.Box.BoxChild w58 = ((global::Gtk.Box.BoxChild)(this.statusbar1 [this.labelRoms]));
 		w58.Position = 1;
 		w58.Expand = false;
 		w58.Fill = false;
@@ -692,9 +692,11 @@ public partial class MainWindow
 		this.button2.Clicked += new global::System.EventHandler (this.PicClicked);
 		this.button3.Clicked += new global::System.EventHandler (this.YoutubeClicked);
 		this.button4.Clicked += new global::System.EventHandler (this.PlayGameClicked);
+		this.nodeview1.RowActivated += new global::Gtk.RowActivatedHandler (this.TreeRowActivated);
 		this.button5.Clicked += new global::System.EventHandler (this.AnyadirJuegoClick);
 		this.button6.Clicked += new global::System.EventHandler (this.EliminarJuegoClicked);
 		this.button7.Clicked += new global::System.EventHandler (this.EditFavsClick);
+		this.nodeview2.RowActivated += new global::Gtk.RowActivatedHandler (this.RowFavActivated);
 		this.button11.Clicked += new global::System.EventHandler (this.PicBackClicked);
 		this.button10.Clicked += new global::System.EventHandler (this.PicForClicked);
 		this.button9.Clicked += new global::System.EventHandler (this.PicZoomInClick);

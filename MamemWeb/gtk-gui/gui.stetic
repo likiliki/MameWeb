@@ -276,6 +276,7 @@
                               <widget class="Gtk.NodeView" id="nodeview1">
                                 <property name="MemberName" />
                                 <property name="CanFocus">True</property>
+                                <signal name="RowActivated" handler="TreeRowActivated" />
                               </widget>
                             </child>
                           </widget>
@@ -301,7 +302,7 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Frame" id="frame2">
+                  <widget class="Gtk.Frame" id="frame3">
                     <property name="MemberName" />
                     <property name="ShadowType">In</property>
                     <property name="BorderWidth">5</property>
@@ -405,7 +406,7 @@
                   </packing>
                 </child>
                 <child>
-                  <widget class="Gtk.Frame" id="frame3">
+                  <widget class="Gtk.Frame" id="frame2">
                     <property name="MemberName" />
                     <property name="HeightRequest">200</property>
                     <property name="ShadowType">In</property>
@@ -428,6 +429,7 @@
                                 <property name="MemberName" />
                                 <property name="CanFocus">True</property>
                                 <property name="ShowScrollbars">True</property>
+                                <signal name="RowActivated" handler="RowFavActivated" />
                               </widget>
                             </child>
                           </widget>
@@ -465,7 +467,7 @@
                 <property name="CanFocus">True</property>
                 <property name="Position">407</property>
                 <child>
-                  <widget class="Gtk.Frame" id="frameImegenes">
+                  <widget class="Gtk.Frame" id="frameImagenes">
                     <property name="MemberName" />
                     <property name="ShadowType">In</property>
                     <property name="LabelYalign">0</property>
@@ -760,7 +762,7 @@
             <property name="MemberName" />
             <property name="Spacing">6</property>
             <child>
-              <widget class="Gtk.Label" id="label3">
+              <widget class="Gtk.Label" id="labelRoms">
                 <property name="MemberName" />
                 <property name="LabelProp" translatable="yes">label3</property>
               </widget>
