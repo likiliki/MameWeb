@@ -258,8 +258,6 @@
                   <widget class="Gtk.Frame" id="frame1">
                     <property name="MemberName" />
                     <property name="ShadowType">In</property>
-                    <property name="LabelYalign">0</property>
-                    <property name="BorderWidth">5</property>
                     <child>
                       <widget class="Gtk.Alignment" id="GtkAlignment3">
                         <property name="MemberName" />
@@ -410,8 +408,6 @@
                     <property name="MemberName" />
                     <property name="HeightRequest">200</property>
                     <property name="ShadowType">In</property>
-                    <property name="LabelYalign">0</property>
-                    <property name="BorderWidth">5</property>
                     <child>
                       <widget class="Gtk.Alignment" id="GtkAlignment5">
                         <property name="MemberName" />
@@ -471,7 +467,6 @@
                     <property name="MemberName" />
                     <property name="ShadowType">In</property>
                     <property name="LabelYalign">0</property>
-                    <property name="BorderWidth">5</property>
                     <child>
                       <widget class="Gtk.Alignment" id="GtkAlignment6">
                         <property name="MemberName" />

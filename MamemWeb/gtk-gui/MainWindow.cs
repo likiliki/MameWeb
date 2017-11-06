@@ -302,8 +302,6 @@ public partial class MainWindow
 		this.frame1 = new global::Gtk.Frame ();
 		this.frame1.Name = "frame1";
 		this.frame1.ShadowType = ((global::Gtk.ShadowType)(1));
-		this.frame1.LabelYalign = 0F;
-		this.frame1.BorderWidth = ((uint)(5));
 		// Container child frame1.Gtk.Container+ContainerChild
 		this.GtkAlignment3 = new global::Gtk.Alignment (0F, 0F, 1F, 1F);
 		this.GtkAlignment3.Name = "GtkAlignment3";
@@ -410,8 +408,6 @@ public partial class MainWindow
 		this.frame2.HeightRequest = 200;
 		this.frame2.Name = "frame2";
 		this.frame2.ShadowType = ((global::Gtk.ShadowType)(1));
-		this.frame2.LabelYalign = 0F;
-		this.frame2.BorderWidth = ((uint)(5));
 		// Container child frame2.Gtk.Container+ContainerChild
 		this.GtkAlignment5 = new global::Gtk.Alignment (0F, 0F, 1F, 1F);
 		this.GtkAlignment5.Name = "GtkAlignment5";
@@ -454,7 +450,6 @@ public partial class MainWindow
 		this.frameImagenes.Name = "frameImagenes";
 		this.frameImagenes.ShadowType = ((global::Gtk.ShadowType)(1));
 		this.frameImagenes.LabelYalign = 0F;
-		this.frameImagenes.BorderWidth = ((uint)(5));
 		// Container child frameImagenes.Gtk.Container+ContainerChild
 		this.GtkAlignment6 = new global::Gtk.Alignment (0F, 0F, 1F, 1F);
 		this.GtkAlignment6.Name = "GtkAlignment6";

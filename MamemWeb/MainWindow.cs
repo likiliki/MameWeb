@@ -13,7 +13,7 @@ public partial class MainWindow: Gtk.Window
 	private BigData self = new BigData(); 
 	private Juegos searchGames = new Juegos("Search", -1);
 
-	private string FILENAME = "Archivodeprueba.bin";
+	private string FILENAME = "mameWebData.bin";
 	private WebView webPictures = new WebView();
 	private WebView webYoutube = new WebView();
 	private Stream myStream;
@@ -32,10 +32,10 @@ public partial class MainWindow: Gtk.Window
 		this.webPictures.LoadFinished += new global::WebKit.LoadFinishedHandler (this.OnWebPicturesLoadFinished);
 		this.webYoutube.LoadFinished += new global::WebKit.LoadFinishedHandler (this.OnWebYoutubeLoadFinished);
 
-		//cargarFile (FILENAME);
+		cargarFile (FILENAME);
 
 		SetUp ();
-		AddData ();
+		//AddData ();
 
 		DataRefresh (SELI);
 		DataFavRefresh ();
@@ -184,7 +184,7 @@ public partial class MainWindow: Gtk.Window
 	}
 
 	private void BuscaJuego(string juego)
-	{
+	{		
 		if (juego != "") {
 			SearchDataRefresh (juego);
 		} 
@@ -232,7 +232,7 @@ public partial class MainWindow: Gtk.Window
 
 	protected void Salir ()
 	{
-		//guardarFile (FILENAME);
+		guardarFile (FILENAME);
 		Application.Quit ();
 	}
 
@@ -432,39 +432,6 @@ public partial class MainWindow: Gtk.Window
 		md.Destroy ();
 	}
 
-	//****************************************
-	// ADD  FULL LIST OF MAME
-	private void AddData()
-	{
-		self.Hyperist.Add(new Juegos("FULL", 0));
-		self.Hyperist [SELI].AddGame ("005", "005");
-		self.Hyperist [SELI].AddGame ("10-Yard Fight (World, set 1)", "10yard");
-		self.Hyperist [SELI].AddGame ("10-Yard Fight '85 (US, Taito license)", "10yard85");
-		self.Hyperist [SELI].AddGame ("10-Yard Fight (Japan)", "10yardj");
-		self.Hyperist [SELI].AddGame ("Eleven Beat", "11beat");
-		self.Hyperist [SELI].AddGame ("18 Wheeler (set 1)", "18w");
-		self.Hyperist [SELI].AddGame ("18 Wheeler (set 2)", "18w2");
-		self.Hyperist [SELI].AddGame ("18 Wheeler Deluxe (Rev A) (JPN)", "18wheelr");
-		self.Hyperist [SELI].AddGame ("18 Wheeler (Rev A) (JPN)", "18wheels");
-		self.Hyperist [SELI].AddGame ("1941: Counter Attack (World 900227)", "1941");
-		self.Hyperist [SELI].AddGame ("1941: Counter Attack (Japan)", "1941j");
-		self.Hyperist [SELI].AddGame ("1941: Counter Attack (World)", "1941r1");
-		self.Hyperist [SELI].AddGame ("1941: Counter Attack (USA 900227)", "1941u");
-		self.Hyperist [SELI].AddGame ("1942 (Revision B)", "1942");
-		self.Hyperist [SELI].AddGame ("1942 (Revision A)", "1942a");
-		self.Hyperist [SELI].AddGame ("1942 (Revision A, bootleg)", "1942abl");
-		self.Hyperist [SELI].AddGame ("1942 (First Version)", "1942b");
-		self.Hyperist [SELI].AddGame ("1942 (prototype)", "1942p");
-		self.Hyperist [SELI].AddGame ("1942 (Williams Electronics license)", "1942w");
-		self.Hyperist [SELI].AddGame ("1943: The Battle of Midway (Euro)", "1943");
-		self.Hyperist [SELI].AddGame ("1943: Battle of Midway (bootleg, hack of Japan set)", "1943b");
-		self.Hyperist [SELI].AddGame ("1943: Midway Kaisen (Japan, Rev B)", "1943j");
-		self.Hyperist [SELI].AddGame ("1943: Midway Kaisen (Japan)", "1943ja");
-		self.Hyperist [SELI].AddGame ("1943 Kai: Midway Kaisen (Japan)", "1943kai");
-		self.Hyperist [SELI].AddGame ("1943: The Battle of Midway (US, Rev C)", "1943u");
-		self.Hyperist [SELI].AddGame ("1944: The Loop Master (USA 000620)", "1944");
-	}
-
 	//-------------------------------------
 	//-------    NODES   	STORE ---------
 	//-------------------------------------
@@ -493,6 +460,7 @@ public partial class MainWindow: Gtk.Window
 		searchGames = new Juegos(searchGame, -1);
 		bool bool1 = false;
 		int tam = self.Hyperist[SELI].game.Count;
+
 		//Console.WriteLine ("Tamanyo->  " + tam);
 		string juego1 = "";
 		string rom1 = "";
@@ -509,10 +477,9 @@ public partial class MainWindow: Gtk.Window
 				searchGames.AddGame(self.Hyperist [SELI].game [i].Name, rom1);
 			}
 		}
-		//searchGames.game.Add (new Juego (rom, Name));
 
 		nodeview1.NodeStore = SearchStore;
-		//labelRoms.Text = searchGames.game.Count.ToString () + "Roms";
+		labelRoms.Text = searchGames.game.Count.ToString () + "Roms";
 	}
 
 	//------------------------------------------------------------------
