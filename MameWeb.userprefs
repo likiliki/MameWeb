@@ -1,10 +1,12 @@
 ﻿<Properties StartupItem="MamemWeb/MameWeb.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="MamemWeb/CustomClass.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MamemWeb/WinFavList.cs">
     <Files>
-      <File FileName="MamemWeb/MainWindow.cs" Line="38" Column="3" />
+      <File FileName="MamemWeb/MainWindow.cs" Line="8" Column="1" />
       <File FileName="MamemWeb/Program.cs" Line="1" Column="1" />
       <File FileName="MamemWeb/CustomClass.cs" Line="1" Column="1" />
+      <File FileName="MamemWeb/WinFavList.cs" Line="80" Column="42" />
+      <File FileName="MamemWeb/FullListMame.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

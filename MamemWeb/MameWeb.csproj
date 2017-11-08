@@ -73,9 +73,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CustomClass.cs" />
     <Compile Include="FullListMame.cs" />
+    <Compile Include="WinFavList.cs" />
+    <Compile Include="gtk-gui\WINFAV.WinFavList.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <None Include="icon.png" />
+    <Content Include="icon.png">
+      <DeployService-UseProjectRelativePath>True</DeployService-UseProjectRelativePath>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="statuslogo.png" />
   </ItemGroup>
 </Project>

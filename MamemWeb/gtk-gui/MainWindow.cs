@@ -75,7 +75,7 @@ public partial class MainWindow
 	
 	private global::Gtk.Button button7;
 	
-	private global::Gtk.Label GtkLabel10;
+	private global::Gtk.Label GtkLabel11;
 	
 	private global::Gtk.Frame frame2;
 	
@@ -85,7 +85,7 @@ public partial class MainWindow
 	
 	private global::Gtk.NodeView nodeview2;
 	
-	private global::Gtk.Label GtkLabel11;
+	private global::Gtk.Label GtkLabel12;
 	
 	private global::Gtk.VPaned vpaned1;
 	
@@ -131,7 +131,11 @@ public partial class MainWindow
 	
 	private global::Gtk.Statusbar statusbar1;
 	
+	private global::Gtk.Image image12;
+	
 	private global::Gtk.Label labelRoms;
+	
+	private global::Gtk.Image image11;
 
 	protected virtual void Build ()
 	{
@@ -390,13 +394,13 @@ public partial class MainWindow
 		w21.Fill = false;
 		this.GtkAlignment4.Add (this.hbox2);
 		this.frame3.Add (this.GtkAlignment4);
-		this.GtkLabel10 = new global::Gtk.Label ();
-		this.GtkLabel10.WidthRequest = 60;
-		this.GtkLabel10.HeightRequest = 30;
-		this.GtkLabel10.Name = "GtkLabel10";
-		this.GtkLabel10.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>Gestion</b>");
-		this.GtkLabel10.UseMarkup = true;
-		this.frame3.LabelWidget = this.GtkLabel10;
+		this.GtkLabel11 = new global::Gtk.Label ();
+		this.GtkLabel11.WidthRequest = 60;
+		this.GtkLabel11.HeightRequest = 30;
+		this.GtkLabel11.Name = "GtkLabel11";
+		this.GtkLabel11.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>Gestion</b>");
+		this.GtkLabel11.UseMarkup = true;
+		this.frame3.LabelWidget = this.GtkLabel11;
 		this.vbox2.Add (this.frame3);
 		global::Gtk.Box.BoxChild w24 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.frame3]));
 		w24.Position = 1;
@@ -425,14 +429,14 @@ public partial class MainWindow
 		this.GtkScrolledWindow1.Add (this.nodeview2);
 		this.GtkAlignment5.Add (this.GtkScrolledWindow1);
 		this.frame2.Add (this.GtkAlignment5);
-		this.GtkLabel11 = new global::Gtk.Label ();
-		this.GtkLabel11.WidthRequest = 350;
-		this.GtkLabel11.HeightRequest = 30;
-		this.GtkLabel11.Name = "GtkLabel11";
-		this.GtkLabel11.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>Lista de Favoritos</b>");
-		this.GtkLabel11.UseMarkup = true;
-		this.GtkLabel11.Justify = ((global::Gtk.Justification)(2));
-		this.frame2.LabelWidget = this.GtkLabel11;
+		this.GtkLabel12 = new global::Gtk.Label ();
+		this.GtkLabel12.WidthRequest = 350;
+		this.GtkLabel12.HeightRequest = 30;
+		this.GtkLabel12.Name = "GtkLabel12";
+		this.GtkLabel12.LabelProp = global::Mono.Unix.Catalog.GetString ("<b>Lista de Favoritos</b>");
+		this.GtkLabel12.UseMarkup = true;
+		this.GtkLabel12.Justify = ((global::Gtk.Justification)(2));
+		this.frame2.LabelWidget = this.GtkLabel12;
 		this.vbox2.Add (this.frame2);
 		global::Gtk.Box.BoxChild w28 = ((global::Gtk.Box.BoxChild)(this.vbox2 [this.frame2]));
 		w28.Position = 2;
@@ -444,7 +448,7 @@ public partial class MainWindow
 		this.vpaned1 = new global::Gtk.VPaned ();
 		this.vpaned1.CanFocus = true;
 		this.vpaned1.Name = "vpaned1";
-		this.vpaned1.Position = 407;
+		this.vpaned1.Position = 369;
 		// Container child vpaned1.Gtk.Paned+PanedChild
 		this.frameImagenes = new global::Gtk.Frame ();
 		this.frameImagenes.Name = "frameImagenes";
@@ -653,25 +657,43 @@ public partial class MainWindow
 		this.statusbar1.Name = "statusbar1";
 		this.statusbar1.Spacing = 6;
 		// Container child statusbar1.Gtk.Box+BoxChild
-		this.labelRoms = new global::Gtk.Label ();
-		this.labelRoms.Name = "labelRoms";
-		this.labelRoms.LabelProp = global::Mono.Unix.Catalog.GetString ("label3");
-		this.statusbar1.Add (this.labelRoms);
-		global::Gtk.Box.BoxChild w58 = ((global::Gtk.Box.BoxChild)(this.statusbar1 [this.labelRoms]));
+		this.image12 = new global::Gtk.Image ();
+		this.image12.WidthRequest = 0;
+		this.image12.HeightRequest = 0;
+		this.image12.Name = "image12";
+		this.image12.Pixbuf = new global::Gdk.Pixbuf (global::System.IO.Path.Combine (global::System.AppDomain.CurrentDomain.BaseDirectory, "./statuslogo.png"));
+		this.statusbar1.Add (this.image12);
+		global::Gtk.Box.BoxChild w58 = ((global::Gtk.Box.BoxChild)(this.statusbar1 [this.image12]));
 		w58.Position = 1;
-		w58.Expand = false;
-		w58.Fill = false;
+		// Container child statusbar1.Gtk.Box+BoxChild
+		this.labelRoms = new global::Gtk.Label ();
+		this.labelRoms.WidthRequest = 400;
+		this.labelRoms.Name = "labelRoms";
+		this.labelRoms.LabelProp = global::Mono.Unix.Catalog.GetString ("Loading Roms ... ... Wait Please");
+		this.statusbar1.Add (this.labelRoms);
+		global::Gtk.Box.BoxChild w59 = ((global::Gtk.Box.BoxChild)(this.statusbar1 [this.labelRoms]));
+		w59.Position = 2;
+		// Container child statusbar1.Gtk.Box+BoxChild
+		this.image11 = new global::Gtk.Image ();
+		this.image11.WidthRequest = 0;
+		this.image11.HeightRequest = 0;
+		this.image11.Name = "image11";
+		this.image11.Pixbuf = new global::Gdk.Pixbuf (global::System.IO.Path.Combine (global::System.AppDomain.CurrentDomain.BaseDirectory, "./statuslogo.png"));
+		this.statusbar1.Add (this.image11);
+		global::Gtk.Box.BoxChild w60 = ((global::Gtk.Box.BoxChild)(this.statusbar1 [this.image11]));
+		w60.PackType = ((global::Gtk.PackType)(1));
+		w60.Position = 3;
 		this.vbox1.Add (this.statusbar1);
-		global::Gtk.Box.BoxChild w59 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.statusbar1]));
-		w59.Position = 4;
-		w59.Expand = false;
-		w59.Fill = false;
+		global::Gtk.Box.BoxChild w61 = ((global::Gtk.Box.BoxChild)(this.vbox1 [this.statusbar1]));
+		w61.Position = 4;
+		w61.Expand = false;
+		w61.Fill = false;
 		this.Add (this.vbox1);
 		if ((this.Child != null)) {
 			this.Child.ShowAll ();
 		}
 		this.DefaultWidth = 1237;
-		this.DefaultHeight = 762;
+		this.DefaultHeight = 859;
 		this.Show ();
 		this.DeleteEvent += new global::Gtk.DeleteEventHandler (this.OnDeleteEvent);
 		this.DestroyEvent += new global::Gtk.DestroyEventHandler (this.OnDestroyEventClicked);

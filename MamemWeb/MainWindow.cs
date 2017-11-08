@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using CustomClass;
-//using WINFAV;
+using WINFAV;
 
 public partial class MainWindow: Gtk.Window
 {
@@ -39,7 +39,6 @@ public partial class MainWindow: Gtk.Window
 
 		DataRefresh (SELI);
 		DataFavRefresh ();
-		//guardarFile (FILENAME);
 	}
 
 	private void guardarFile(string nameFile)
@@ -232,7 +231,7 @@ public partial class MainWindow: Gtk.Window
 
 	protected void Salir ()
 	{
-		guardarFile (FILENAME);
+		//guardarFile (FILENAME);
 		Application.Quit ();
 	}
 
